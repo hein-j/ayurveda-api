@@ -1,12 +1,12 @@
-var express = require('express');
-var foodsRouter = require('./routes/foods');
-var apiKeyRouter = require('./routes/apikey');
+const express = require('express');
+const foodsRouter = require('./routes/foods');
+const apiKeyRouter = require('./routes/apikey');
 const authentication = require('./middleware/authentication');
 const connectDB = require('./config/connectDB');
 
 connectDB();
 
-var app = express();
+const app = express();
 
 app.use(express.json());
 

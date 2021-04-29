@@ -1,4 +1,4 @@
-var express = require('express');
+const express = require('express');
 const apiKeyController = require('../controllers/apiKeyController');
 
 const router = express.Router();

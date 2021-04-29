@@ -1,4 +1,4 @@
-var express = require('express');
+const express = require('express');
 const foodsController = require('../controllers/foodsController');
 const foodsFoodController = require('../controllers/foodsFoodController');
 

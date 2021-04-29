@@ -1,10 +1,10 @@
 const {dbURL} = require('./secrets');
 
 module.exports = function () {
-  var mongoose = require('mongoose');
-  var mongoDB = dbURL;
+  const mongoose = require('mongoose');
+  const mongoDB = dbURL;
   mongoose.connect(mongoDB, { useNewUrlParser: true , useUnifiedTopology: true});
-  var db = mongoose.connection;
+  const db = mongoose.connection;
   db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
   return db;
