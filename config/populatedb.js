@@ -2,15 +2,12 @@ const fs = require('fs');
 const {Food} = require('../models/food');
 const APIkey = require('../models/apiKey');
 const parse = require('csv-parse');
-const secrets = require('./secrets');
+const {adminAPIkeyObj} = require('./secrets');
+const connectDB = require('./connectDB');
+const mongoose = require('mongoose');
 
-// connect to database TODO: gather up w/ the one in app
-var mongoose = require('mongoose');
-var mongoDB = secrets.dbURL;
-mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true});
-mongoose.Promise = global.Promise;
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+
+const db = connectDB();
 
 // parse csv
 fs.readFile('./raw-data-ayurveda-api.csv', 'utf8', (err, data) => {
@@ -62,7 +59,7 @@ async function createCollection (data) {
 
   await Food.insertMany(foods);
 
-  await APIkey.create(secrets.adminAPIkeyObj);
+  await APIkey.create(adminAPIkeyObj);
 
   console.log('alrighty!');
   mongoose.connection.close();
