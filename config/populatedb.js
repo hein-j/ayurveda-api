@@ -1,12 +1,11 @@
-var async = require('async');
 const fs = require('fs');
-const Food = require('../models/food');
+const {Food} = require('../models/food');
+const APIkey = require('../models/apiKey');
 const parse = require('csv-parse');
 const secrets = require('./secrets');
 
 // connect to database TODO: gather up w/ the one in app
 var mongoose = require('mongoose');
-const food = require('../models/food');
 var mongoDB = secrets.dbURL;
 mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true});
 mongoose.Promise = global.Promise;
@@ -36,26 +35,26 @@ async function createCollection (data) {
 
   for (let i = 0; i < data.length; i++) {
     let obj = data[i]
-    obj.vata = parseInt(obj.vata) || 0;
-    obj.pitta = parseInt(obj.pitta) || 0;
-    obj.kapha = parseInt(obj.kapha) || 0;
+    obj.v = parseInt(obj.v) || 0;
+    obj.p = parseInt(obj.p) || 0;
+    obj.k = parseInt(obj.k) || 0;
     const index = foods.findIndex(food => food.name === obj.name);
     if (index === -1) {
       const newFood = {
         groups: [obj.group],
         name: obj.name,
-        vata: obj.vata,
-        kapha: obj.kapha,
-        pitta: obj.pitta,
+        v: obj.v,
+        k: obj.k,
+        p: obj.p,
       }
       foods.push(newFood)
     } else {
       const existingFood = foods[index]
       foods[index] = {
         name: existingFood.name,
-        vata: existingFood.vata || obj.vata,
-        pitta: existingFood.pitta || obj.pitta,
-        kapha: existingFood.kapha || obj.kapha,
+        v: existingFood.v || obj.v,
+        p: existingFood.p || obj.p,
+        k: existingFood.k || obj.k,
         groups: existingFood.groups.includes(obj.group) ? existingFood.groups : existingFood.groups.concat([obj.group])
       }
     }
@@ -63,6 +62,9 @@ async function createCollection (data) {
 
   await Food.insertMany(foods);
 
+  await APIkey.create(secrets.adminAPIkeyObj);
+
+  console.log('alrighty!');
   mongoose.connection.close();
 
 }
