@@ -7,6 +7,7 @@
     "dev": "nodemon ./bin/wwww"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "csv-parse": "^4.15.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",

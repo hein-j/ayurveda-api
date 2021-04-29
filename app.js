@@ -4,12 +4,15 @@ const apiKeyRouter = require('./routes/apikey');
 const authentication = require('./middleware/authentication');
 const connectDB = require('./config/connectDB');
 const helmet = require("helmet");
+var cors = require('cors')
 
 connectDB();
 
 const app = express();
 
 app.use(helmet());
+
+app.use(cors());
 
 app.use(express.json());
 
