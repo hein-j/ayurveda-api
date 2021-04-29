@@ -11,6 +11,7 @@
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "googleapis": "^73.0.0",
+    "helmet": "^4.5.0",
     "joi": "^17.4.0",
     "mongoose": "^5.12.6",
     "nodemailer": "^6.6.0",
