@@ -1,7 +1,8 @@
 const express = require('express');
 const foodsRouter = require('./routes/foods');
 const apiKeyRouter = require('./routes/apikey');
-const authentication = require('./middleware/authentication');
+const userAuthentication = require('./middleware/userAuthentication');
+const adminAuthentication = require('./middleware/adminAuthentication');
 const connectDB = require('./config/connectDB');
 const helmet = require("helmet");
 var cors = require('cors')
@@ -16,7 +17,7 @@ app.use(cors());
 
 app.use(express.json());
 
-app.use(['/foods', '/apikey'], authentication);
+app.use(['/foods', '/apikey'], userAuthentication, adminAuthentication);
 
 app.use('/foods', foodsRouter);
 
