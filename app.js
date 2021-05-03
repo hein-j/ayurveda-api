@@ -1,6 +1,6 @@
 const express = require('express');
 const foodsRouter = require('./routes/foods');
-const apiKeyRouter = require('./routes/apikey');
+const apiKeyRouter = require('./routes/apiKey');
 const userAuthentication = require('./middleware/userAuthentication');
 const adminAuthentication = require('./middleware/adminAuthentication');
 const connectDB = require('./config/connectDB');
