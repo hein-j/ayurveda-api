@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "populatedb": "node ./config/populatedb.js",
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/wwww"
   },
