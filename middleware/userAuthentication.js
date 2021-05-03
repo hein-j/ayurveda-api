@@ -10,7 +10,6 @@ module.exports = function (req, res, next) {
   }
   if (!uuidValidate(key)) {
     res.status(401).json('Wrong API key');
-    console.log('yu')
     return;
   }
   APIkey.findOneAndUpdate({key: key}, {$inc : {accessed : 1}}).exec((err, apiKey) => {

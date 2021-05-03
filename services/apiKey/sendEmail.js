@@ -1,6 +1,6 @@
 const nodemailer = require('nodemailer');
 const {google} = require('googleapis');
-const {gmailObj} = require('../../config/secrets')
+const {gmailObj} = require('../../config/envVariables')
 
 // big thanks to https://www.youtube.com/watch?v=-rcRf7yswfM 
 

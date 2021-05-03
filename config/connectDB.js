@@ -1,4 +1,4 @@
-const {dbURL} = require('./secrets');
+const {dbURL} = require('./envVariables');
 
 module.exports = function () {
   const mongoose = require('mongoose');

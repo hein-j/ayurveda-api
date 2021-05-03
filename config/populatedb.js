@@ -2,7 +2,7 @@ const fs = require('fs');
 const {Food} = require('../models/food');
 const APIkey = require('../models/apiKey');
 const parse = require('csv-parse');
-const {adminAPIkeyObj} = require('./secrets');
+const {adminAPIkeyObj} = require('./envVariables');
 const connectDB = require('./connectDB');
 const mongoose = require('mongoose');
 

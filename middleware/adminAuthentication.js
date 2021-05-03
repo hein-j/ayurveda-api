@@ -1,4 +1,4 @@
-const {adminAPIkeyObj} = require('../config/secrets');
+const {adminAPIkeyObj, docURL} = require('../config/envVariables');
 
 module.exports = function (req, res, next) {
   const key = req.headers['authorization'];
@@ -6,7 +6,7 @@ module.exports = function (req, res, next) {
     req.isAdmin = true;
   }
 
-  if (req.isAdmin && (req.headers.origin !== 'http://hey.com')) {
+  if (req.isAdmin && (req.headers.origin !== docURL)) {
     res.status(401).json('You are not authorized');
     return;
   }
