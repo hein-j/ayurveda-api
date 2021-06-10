@@ -1,7 +1,12 @@
 <h1 align="center">Ayurveda API</h1>
-<p align="center"><b>
-  <a href="https://doc.ayurvedaapi.com/" target="_blank" rel="noreferrer">View Demo</a></b>
-</p>
+
+<a href="https://doc.ayurvedaapi.com/" target="_blank" rel="noreferrer">
+  <p align="center">
+    <b>View Demo</b>
+  </p>
+  <img src="https://github.com/hein-j/ayurveda-api/blob/main/docs/screenshot.png?raw=true" alt="preview">
+</a>
+
 
 <!-- ABOUT THE PROJECT -->
 ## About
