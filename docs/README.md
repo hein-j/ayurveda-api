@@ -1,11 +1,6 @@
 <h1 align="center">Ayurveda API</h1>
 
-<a href="https://doc.ayurvedaapi.com/" target="_blank" rel="noreferrer">
-  <p align="center">
-    <b>View Demo</b>
-  </p>
-  <img src="https://github.com/hein-j/ayurveda-api/blob/main/docs/screenshot.png?raw=true" alt="preview">
-</a>
+<img src="https://github.com/hein-j/ayurveda-api/blob/main/docs/screenshot.png?raw=true" alt="preview">
 
 
 <!-- ABOUT THE PROJECT -->
@@ -22,8 +17,9 @@ This REST API provides information on the effects of specific food items on the 
 
 <!-- USAGE EXAMPLES -->
 ## Usage
+<ins>**The service is on hiatus at this time**</ins>
 
-For endpoints, examples of their usage, and your free API key, please refer to the [Documentation](https://doc.ayurvedaapi.com/).
+For endpoints, examples of their usage, ~and your free API key~, please refer to the [Documentation](https://doc.ayurvedaapi.com/).
 
 <!-- CONTRIBUTING -->
 ## Contributing
